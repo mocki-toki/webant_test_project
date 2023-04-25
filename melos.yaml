@@ -1,0 +1,15 @@
+name: webant_test_project_monorepo
+
+packages:
+  - .
+  - webant_test_client
+  - packages/**
+
+scripts:
+  pub:major: 'flutter pub run melos exec "flutter pub upgrade --major-versions"'
+  test: 'flutter pub run melos exec --dir-exists="test" "flutter test --dart-define=environment=testing" '
+  integration_test: 'flutter pub run melos exec --dir-exists="integration_test" "flutter test integration_test --dart-define=environment=testing" '
+  coverage: 'flutter pub run melos exec --dir-exists="test" "flutter test --coverage"'
+  generate: 'flutter pub run melos exec --depends-on build_runner "dart run build_runner build --delete-conflicting-outputs" '
+  clean: 'flutter pub run melos exec --depends-on flutter flutter clean && find -E . -regex ".*((g|freezed)\.dart|pubspec\.lock|\.DS_Store)" -type f -delete'
+  fresh: "flutter pub run melos run clean && flutter pub get && flutter pub run melos bootstrap && flutter pub run melos run generate"

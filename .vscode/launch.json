@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "webant_test_client",
+      "request": "launch",
+      "type": "dart",
+      "program": "webant_test_client/lib/main.dart"
+    }
+  ]
+}

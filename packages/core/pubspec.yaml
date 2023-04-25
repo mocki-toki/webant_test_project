@@ -1,0 +1,30 @@
+name: core
+
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pansy_arch_flutter:
+    git:
+      url: https://github.com/mocki-toki/pansy_architecture.git
+      path: packages/pansy_arch_flutter
+  pansy_arch_go_router:
+    git:
+      url: https://github.com/mocki-toki/pansy_architecture.git
+      path: packages/pansy_arch_go_router
+
+  freezed_annotation: ^2.2.0
+  equatable: ^2.0.5
+  cross_file: ^0.3.3+4
+  mime: ^1.0.4
+  uuid: ^3.0.7
+
+  dino: ^1.0.0-pre.1
+
+flutter:
+  uses-material-design: true

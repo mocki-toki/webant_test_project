@@ -1,0 +1,17 @@
+name: webant_test_client
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  application: ^1.0.0
+  account: ^1.0.0
+  gallery: ^1.0.0
+
+flutter:
+  uses-material-design: true

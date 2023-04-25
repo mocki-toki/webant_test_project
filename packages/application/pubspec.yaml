@@ -1,0 +1,16 @@
+name: application
+
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  core: ^1.0.0
+
+flutter:
+  uses-material-design: true
