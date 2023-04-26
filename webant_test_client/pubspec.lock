@@ -4,7 +4,7 @@ packages:
   account:
     dependency: "direct main"
     description:
-      path: "../packages/account"
+      path: "../modules/account"
       relative: true
     source: path
     version: "1.0.0"
@@ -27,7 +27,7 @@ packages:
   core:
     dependency: "direct overridden"
     description:
-      path: "../packages/core"
+      path: "../modules/core"
       relative: true
     source: path
     version: "1.0.0"
@@ -100,7 +100,7 @@ packages:
   gallery:
     dependency: "direct main"
     description:
-      path: "../packages/gallery"
+      path: "../modules/gallery"
       relative: true
     source: path
     version: "1.0.0"

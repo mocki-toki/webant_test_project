@@ -3,7 +3,7 @@ name: webant_test_project_monorepo
 packages:
   - .
   - webant_test_client
-  - packages/**
+  - modules/**
 
 scripts:
   pub:major: 'flutter pub run melos exec "flutter pub upgrade --major-versions"'
