@@ -9,7 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  application: ^1.0.0
   account: ^1.0.0
   gallery: ^1.0.0
 

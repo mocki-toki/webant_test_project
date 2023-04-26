@@ -1,3 +1,4 @@
+
 import 'package:core/core.dart';
 
 class ApplicationWidget extends StatelessWidget {

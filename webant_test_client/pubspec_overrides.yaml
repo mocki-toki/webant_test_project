@@ -1,9 +1,7 @@
-# melos_managed_dependency_overrides: gallery,application,core,account
+# melos_managed_dependency_overrides: gallery,core,account
 dependency_overrides:
   account:
     path: ../packages/account
-  application:
-    path: ../packages/application
   core:
     path: ../packages/core
   gallery:
