@@ -15,7 +15,6 @@ class RegisterPage extends StatelessWidget {
         child: Padding(
           padding: Paddings.symmetric16x30,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextFormField(
                 decoration: InputDecoration(hintText: 'Username*'),

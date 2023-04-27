@@ -28,19 +28,14 @@ class WelcomePage extends StatelessWidget {
                     style: TextStyles.title,
                   ),
                   Indent.box60(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      ElevatedButton(
-                        child: Text('Create an account'),
-                        onPressed: () => context.open(RegisterPageRoute()),
-                      ),
-                      Indent.box10(),
-                      OutlinedButton(
-                        child: Text('I already have an account'),
-                        onPressed: () => context.open(LoginPageRoute()),
-                      ),
-                    ],
+                  ElevatedButton(
+                    child: Text('Create an account'),
+                    onPressed: () => context.open(RegisterPageRoute()),
+                  ),
+                  Indent.box10(),
+                  OutlinedButton(
+                    child: Text('I already have an account'),
+                    onPressed: () => context.open(LoginPageRoute()),
                   ),
                 ],
               ),
