@@ -1,4 +1,3 @@
-
 import 'package:core/core.dart';
 
 class ApplicationWidget extends StatelessWidget {
@@ -13,6 +12,7 @@ class ApplicationWidget extends StatelessWidget {
       child: MaterialApp.router(
         scaffoldMessengerKey: serviceProvider.getRequired<ScaffoldMessengerProvider>().key,
         debugShowCheckedModeBanner: false,
+        theme: Theme.lightMaterialTheme,
         routerConfig: serviceProvider.getRequired<GoRouter>(),
         title: PresentationConstants.applicationName,
       ),
