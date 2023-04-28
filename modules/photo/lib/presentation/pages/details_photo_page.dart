@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:core/domain/failure/network_failure.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo/domain/models/photo.dart';
 import 'package:photo/domain/services/photo_repository.dart';

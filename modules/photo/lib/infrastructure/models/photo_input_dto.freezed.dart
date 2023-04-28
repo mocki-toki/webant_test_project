@@ -21,12 +21,12 @@ PhotoInputDto _$PhotoInputDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PhotoInputDto {
   String get name => throw _privateConstructorUsedError;
+  String get dateCreate => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'new')
   bool get isNew => throw _privateConstructorUsedError;
-  @JsonKey(name: 'popular')
-  bool get isPopular => throw _privateConstructorUsedError;
-  MediaDto get image => throw _privateConstructorUsedError;
+  bool get popular => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,12 +42,11 @@ abstract class $PhotoInputDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
+      String dateCreate,
       String description,
       @JsonKey(name: 'new') bool isNew,
-      @JsonKey(name: 'popular') bool isPopular,
-      MediaDto image});
-
-  $MediaDtoCopyWith<$Res> get image;
+      bool popular,
+      String image});
 }
 
 /// @nodoc
@@ -64,15 +63,20 @@ class _$PhotoInputDtoCopyWithImpl<$Res, $Val extends PhotoInputDto>
   @override
   $Res call({
     Object? name = null,
+    Object? dateCreate = null,
     Object? description = null,
     Object? isNew = null,
-    Object? isPopular = null,
+    Object? popular = null,
     Object? image = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateCreate: null == dateCreate
+          ? _value.dateCreate
+          : dateCreate // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -82,23 +86,15 @@ class _$PhotoInputDtoCopyWithImpl<$Res, $Val extends PhotoInputDto>
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPopular: null == isPopular
-          ? _value.isPopular
-          : isPopular // ignore: cast_nullable_to_non_nullable
+      popular: null == popular
+          ? _value.popular
+          : popular // ignore: cast_nullable_to_non_nullable
               as bool,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as MediaDto,
+              as String,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $MediaDtoCopyWith<$Res> get image {
-    return $MediaDtoCopyWith<$Res>(_value.image, (value) {
-      return _then(_value.copyWith(image: value) as $Val);
-    });
   }
 }
 
@@ -112,13 +108,11 @@ abstract class _$$_PhotoInputDtoCopyWith<$Res>
   @useResult
   $Res call(
       {String name,
+      String dateCreate,
       String description,
       @JsonKey(name: 'new') bool isNew,
-      @JsonKey(name: 'popular') bool isPopular,
-      MediaDto image});
-
-  @override
-  $MediaDtoCopyWith<$Res> get image;
+      bool popular,
+      String image});
 }
 
 /// @nodoc
@@ -133,15 +127,20 @@ class __$$_PhotoInputDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
+    Object? dateCreate = null,
     Object? description = null,
     Object? isNew = null,
-    Object? isPopular = null,
+    Object? popular = null,
     Object? image = null,
   }) {
     return _then(_$_PhotoInputDto(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateCreate: null == dateCreate
+          ? _value.dateCreate
+          : dateCreate // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -151,14 +150,14 @@ class __$$_PhotoInputDtoCopyWithImpl<$Res>
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPopular: null == isPopular
-          ? _value.isPopular
-          : isPopular // ignore: cast_nullable_to_non_nullable
+      popular: null == popular
+          ? _value.popular
+          : popular // ignore: cast_nullable_to_non_nullable
               as bool,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as MediaDto,
+              as String,
     ));
   }
 }
@@ -168,9 +167,10 @@ class __$$_PhotoInputDtoCopyWithImpl<$Res>
 class _$_PhotoInputDto implements _PhotoInputDto {
   const _$_PhotoInputDto(
       {required this.name,
+      required this.dateCreate,
       required this.description,
       @JsonKey(name: 'new') required this.isNew,
-      @JsonKey(name: 'popular') required this.isPopular,
+      required this.popular,
       required this.image});
 
   factory _$_PhotoInputDto.fromJson(Map<String, dynamic> json) =>
@@ -179,19 +179,20 @@ class _$_PhotoInputDto implements _PhotoInputDto {
   @override
   final String name;
   @override
+  final String dateCreate;
+  @override
   final String description;
   @override
   @JsonKey(name: 'new')
   final bool isNew;
   @override
-  @JsonKey(name: 'popular')
-  final bool isPopular;
+  final bool popular;
   @override
-  final MediaDto image;
+  final String image;
 
   @override
   String toString() {
-    return 'PhotoInputDto(name: $name, description: $description, isNew: $isNew, isPopular: $isPopular, image: $image)';
+    return 'PhotoInputDto(name: $name, dateCreate: $dateCreate, description: $description, isNew: $isNew, popular: $popular, image: $image)';
   }
 
   @override
@@ -200,18 +201,19 @@ class _$_PhotoInputDto implements _PhotoInputDto {
         (other.runtimeType == runtimeType &&
             other is _$_PhotoInputDto &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.dateCreate, dateCreate) ||
+                other.dateCreate == dateCreate) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.isNew, isNew) || other.isNew == isNew) &&
-            (identical(other.isPopular, isPopular) ||
-                other.isPopular == isPopular) &&
+            (identical(other.popular, popular) || other.popular == popular) &&
             (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, description, isNew, isPopular, image);
+  int get hashCode => Object.hash(
+      runtimeType, name, dateCreate, description, isNew, popular, image);
 
   @JsonKey(ignore: true)
   @override
@@ -230,10 +232,11 @@ class _$_PhotoInputDto implements _PhotoInputDto {
 abstract class _PhotoInputDto implements PhotoInputDto {
   const factory _PhotoInputDto(
       {required final String name,
+      required final String dateCreate,
       required final String description,
       @JsonKey(name: 'new') required final bool isNew,
-      @JsonKey(name: 'popular') required final bool isPopular,
-      required final MediaDto image}) = _$_PhotoInputDto;
+      required final bool popular,
+      required final String image}) = _$_PhotoInputDto;
 
   factory _PhotoInputDto.fromJson(Map<String, dynamic> json) =
       _$_PhotoInputDto.fromJson;
@@ -241,15 +244,16 @@ abstract class _PhotoInputDto implements PhotoInputDto {
   @override
   String get name;
   @override
+  String get dateCreate;
+  @override
   String get description;
   @override
   @JsonKey(name: 'new')
   bool get isNew;
   @override
-  @JsonKey(name: 'popular')
-  bool get isPopular;
+  bool get popular;
   @override
-  MediaDto get image;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$_PhotoInputDtoCopyWith<_$_PhotoInputDto> get copyWith =>

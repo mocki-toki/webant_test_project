@@ -12,6 +12,7 @@ dependencies:
   core: ^1.0.0
   account: ^1.0.0
   photo: ^1.0.0
+  profile: ^1.0.0
 
 dev_dependencies:
   flutter_test:

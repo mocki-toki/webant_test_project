@@ -1,5 +1,7 @@
+import 'package:account/account.dart';
 import 'package:account/presentation/pages/register_page.dart';
 import 'package:core/core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage(this.route);
@@ -8,36 +10,59 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Log in'),
+    return BlocProvider(
+      create: (_) => LoginViewModel(
+        context.getRequired<AccountRepository>(),
+        context.getRequired<ScaffoldMessengerState>(),
+        context.getRequired<GoRouter>(),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: Paddings.symmetric16x30,
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(hintText: 'E-mail'),
-              ),
-              Indent.box10(),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Password'),
-              ),
-              Indent.box40(),
-              ElevatedButton(
-                child: Text('Log In'),
-                onPressed: () {},
-              ),
-              Indent.box10(),
-              TextButton(
-                child: Text('Create account'),
-                onPressed: () => context.open(RegisterPageRoute()),
-              ),
-            ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Log in'),
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: Paddings.symmetric16x30,
+            child: _Body(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<LoginViewModel, LoginState>(
+      builder: (context, state) {
+        final viewmodel = context.read<LoginViewModel>();
+        return Column(
+          children: [
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Username'),
+              onChanged: viewmodel.usernameChanged,
+            ),
+            Indent.box10(),
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Password'),
+              onChanged: viewmodel.passwordChanged,
+            ),
+            Indent.box40(),
+            ElevatedButton(
+              child: Text('Log In'),
+              onPressed: viewmodel.login,
+            ),
+            Indent.box10(),
+            TextButton(
+              child: Text('Create account'),
+              onPressed: () => context.open(RegisterPageRoute()),
+            ),
+          ],
+        );
+      },
     );
   }
 }

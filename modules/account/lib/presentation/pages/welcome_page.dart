@@ -2,8 +2,8 @@ import 'package:account/presentation/pages/login_page.dart';
 import 'package:account/presentation/pages/register_page.dart';
 import 'package:core/core.dart';
 
-class WelcomePageBody extends StatelessWidget {
-  const WelcomePageBody();
+class WelcomePage extends StatelessWidget {
+  const WelcomePage();
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ class PhotosResponseDto with _$PhotosResponseDto {
     required int totalItems,
     required int itemsPerPage,
     required int countOfPages,
-    required List<PhotoDto> data,
+    required Iterable<PhotoDto> data,
   }) = _PhotosResponseDto;
 
   factory PhotosResponseDto.fromJson(Map<String, dynamic> json) =>

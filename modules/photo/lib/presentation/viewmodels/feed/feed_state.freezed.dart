@@ -20,7 +20,7 @@ mixin _$FeedState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Photo> photos, int page, bool isLastPage)
+    required TResult Function(Iterable<Photo> photos, int page, bool isLastPage)
         loaded,
     required TResult Function(Failure failure) failure,
   }) =>
@@ -29,7 +29,8 @@ mixin _$FeedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult? Function(Iterable<Photo> photos, int page, bool isLastPage)?
+        loaded,
     TResult? Function(Failure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,7 +38,7 @@ mixin _$FeedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult Function(Iterable<Photo> photos, int page, bool isLastPage)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -125,7 +126,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Photo> photos, int page, bool isLastPage)
+    required TResult Function(Iterable<Photo> photos, int page, bool isLastPage)
         loaded,
     required TResult Function(Failure failure) failure,
   }) {
@@ -137,7 +138,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult? Function(Iterable<Photo> photos, int page, bool isLastPage)?
+        loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return initial?.call();
@@ -148,7 +150,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult Function(Iterable<Photo> photos, int page, bool isLastPage)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -239,7 +241,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Photo> photos, int page, bool isLastPage)
+    required TResult Function(Iterable<Photo> photos, int page, bool isLastPage)
         loaded,
     required TResult Function(Failure failure) failure,
   }) {
@@ -251,7 +253,8 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult? Function(Iterable<Photo> photos, int page, bool isLastPage)?
+        loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return loading?.call();
@@ -262,7 +265,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult Function(Iterable<Photo> photos, int page, bool isLastPage)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -319,7 +322,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Photo> photos, int page, bool isLastPage});
+  $Res call({Iterable<Photo> photos, int page, bool isLastPage});
 }
 
 /// @nodoc
@@ -338,9 +341,9 @@ class __$$_LoadedCopyWithImpl<$Res>
   }) {
     return _then(_$_Loaded(
       photos: null == photos
-          ? _value._photos
+          ? _value.photos
           : photos // ignore: cast_nullable_to_non_nullable
-              as List<Photo>,
+              as Iterable<Photo>,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -357,19 +360,10 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 class _$_Loaded implements _Loaded {
   const _$_Loaded(
-      {required final List<Photo> photos,
-      required this.page,
-      required this.isLastPage})
-      : _photos = photos;
+      {required this.photos, required this.page, required this.isLastPage});
 
-  final List<Photo> _photos;
   @override
-  List<Photo> get photos {
-    if (_photos is EqualUnmodifiableListView) return _photos;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_photos);
-  }
-
+  final Iterable<Photo> photos;
   @override
   final int page;
   @override
@@ -385,7 +379,7 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._photos, _photos) &&
+            const DeepCollectionEquality().equals(other.photos, photos) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.isLastPage, isLastPage) ||
                 other.isLastPage == isLastPage));
@@ -393,7 +387,7 @@ class _$_Loaded implements _Loaded {
 
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_photos), page, isLastPage);
+      const DeepCollectionEquality().hash(photos), page, isLastPage);
 
   @JsonKey(ignore: true)
   @override
@@ -406,7 +400,7 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Photo> photos, int page, bool isLastPage)
+    required TResult Function(Iterable<Photo> photos, int page, bool isLastPage)
         loaded,
     required TResult Function(Failure failure) failure,
   }) {
@@ -418,7 +412,8 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult? Function(Iterable<Photo> photos, int page, bool isLastPage)?
+        loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return loaded?.call(photos, page, isLastPage);
@@ -429,7 +424,7 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult Function(Iterable<Photo> photos, int page, bool isLastPage)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -479,11 +474,11 @@ class _$_Loaded implements _Loaded {
 
 abstract class _Loaded implements FeedState {
   const factory _Loaded(
-      {required final List<Photo> photos,
+      {required final Iterable<Photo> photos,
       required final int page,
       required final bool isLastPage}) = _$_Loaded;
 
-  List<Photo> get photos;
+  Iterable<Photo> get photos;
   int get page;
   bool get isLastPage;
   @JsonKey(ignore: true)
@@ -556,7 +551,7 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Photo> photos, int page, bool isLastPage)
+    required TResult Function(Iterable<Photo> photos, int page, bool isLastPage)
         loaded,
     required TResult Function(Failure failure) failure,
   }) {
@@ -568,7 +563,8 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult? Function(Iterable<Photo> photos, int page, bool isLastPage)?
+        loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -579,7 +575,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Photo> photos, int page, bool isLastPage)? loaded,
+    TResult Function(Iterable<Photo> photos, int page, bool isLastPage)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {

@@ -23,7 +23,7 @@ mixin _$PhotosResponseDto {
   int get totalItems => throw _privateConstructorUsedError;
   int get itemsPerPage => throw _privateConstructorUsedError;
   int get countOfPages => throw _privateConstructorUsedError;
-  List<PhotoDto> get data => throw _privateConstructorUsedError;
+  Iterable<PhotoDto> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +41,7 @@ abstract class $PhotosResponseDtoCopyWith<$Res> {
       {int totalItems,
       int itemsPerPage,
       int countOfPages,
-      List<PhotoDto> data});
+      Iterable<PhotoDto> data});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ class _$PhotosResponseDtoCopyWithImpl<$Res, $Val extends PhotosResponseDto>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<PhotoDto>,
+              as Iterable<PhotoDto>,
     ) as $Val);
   }
 }
@@ -95,7 +95,7 @@ abstract class _$$_PhotosResponseDtoCopyWith<$Res>
       {int totalItems,
       int itemsPerPage,
       int countOfPages,
-      List<PhotoDto> data});
+      Iterable<PhotoDto> data});
 }
 
 /// @nodoc
@@ -128,9 +128,9 @@ class __$$_PhotosResponseDtoCopyWithImpl<$Res>
           : countOfPages // ignore: cast_nullable_to_non_nullable
               as int,
       data: null == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<PhotoDto>,
+              as Iterable<PhotoDto>,
     ));
   }
 }
@@ -142,8 +142,7 @@ class _$_PhotosResponseDto implements _PhotosResponseDto {
       {required this.totalItems,
       required this.itemsPerPage,
       required this.countOfPages,
-      required final List<PhotoDto> data})
-      : _data = data;
+      required this.data});
 
   factory _$_PhotosResponseDto.fromJson(Map<String, dynamic> json) =>
       _$$_PhotosResponseDtoFromJson(json);
@@ -154,13 +153,8 @@ class _$_PhotosResponseDto implements _PhotosResponseDto {
   final int itemsPerPage;
   @override
   final int countOfPages;
-  final List<PhotoDto> _data;
   @override
-  List<PhotoDto> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final Iterable<PhotoDto> data;
 
   @override
   String toString() {
@@ -178,13 +172,13 @@ class _$_PhotosResponseDto implements _PhotosResponseDto {
                 other.itemsPerPage == itemsPerPage) &&
             (identical(other.countOfPages, countOfPages) ||
                 other.countOfPages == countOfPages) &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, totalItems, itemsPerPage,
-      countOfPages, const DeepCollectionEquality().hash(_data));
+      countOfPages, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -206,7 +200,7 @@ abstract class _PhotosResponseDto implements PhotosResponseDto {
       {required final int totalItems,
       required final int itemsPerPage,
       required final int countOfPages,
-      required final List<PhotoDto> data}) = _$_PhotosResponseDto;
+      required final Iterable<PhotoDto> data}) = _$_PhotosResponseDto;
 
   factory _PhotosResponseDto.fromJson(Map<String, dynamic> json) =
       _$_PhotosResponseDto.fromJson;
@@ -218,7 +212,7 @@ abstract class _PhotosResponseDto implements PhotosResponseDto {
   @override
   int get countOfPages;
   @override
-  List<PhotoDto> get data;
+  Iterable<PhotoDto> get data;
   @override
   @JsonKey(ignore: true)
   _$$_PhotosResponseDtoCopyWith<_$_PhotosResponseDto> get copyWith =>

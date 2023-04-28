@@ -12,8 +12,7 @@ _$_PhotosResponseDto _$$_PhotosResponseDtoFromJson(Map<String, dynamic> json) =>
       itemsPerPage: json['itemsPerPage'] as int,
       countOfPages: json['countOfPages'] as int,
       data: (json['data'] as List<dynamic>)
-          .map((e) => PhotoDto.fromJson(e as Map<String, dynamic>))
-          .toList(),
+          .map((e) => PhotoDto.fromJson(e as Map<String, dynamic>)),
     );
 
 Map<String, dynamic> _$$_PhotosResponseDtoToJson(
@@ -22,5 +21,5 @@ Map<String, dynamic> _$$_PhotosResponseDtoToJson(
       'totalItems': instance.totalItems,
       'itemsPerPage': instance.itemsPerPage,
       'countOfPages': instance.countOfPages,
-      'data': instance.data,
+      'data': instance.data.toList(),
     };

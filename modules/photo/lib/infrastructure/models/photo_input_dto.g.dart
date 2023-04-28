@@ -9,17 +9,19 @@ part of 'photo_input_dto.dart';
 _$_PhotoInputDto _$$_PhotoInputDtoFromJson(Map<String, dynamic> json) =>
     _$_PhotoInputDto(
       name: json['name'] as String,
+      dateCreate: json['dateCreate'] as String,
       description: json['description'] as String,
       isNew: json['new'] as bool,
-      isPopular: json['popular'] as bool,
-      image: MediaDto.fromJson(json['image'] as Map<String, dynamic>),
+      popular: json['popular'] as bool,
+      image: json['image'] as String,
     );
 
 Map<String, dynamic> _$$_PhotoInputDtoToJson(_$_PhotoInputDto instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'dateCreate': instance.dateCreate,
       'description': instance.description,
       'new': instance.isNew,
-      'popular': instance.isPopular,
+      'popular': instance.popular,
       'image': instance.image,
     };

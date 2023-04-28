@@ -175,10 +175,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "4d141302e68dcdec0949ac798b5a8cf307eb6f79c70830ef1a2aec9b31827c28"
+      sha256: bd7e671d26fd39c78cba82070fa34ef1f830b0e7ed1aeebccabc6561302a7ee5
       url: "https://pub.dev"
     source: hosted
-    version: "6.5.8"
+    version: "6.5.9"
   http:
     dependency: transitive
     description:
@@ -264,7 +264,7 @@ packages:
     description:
       path: "packages/pansy_arch"
       ref: HEAD
-      resolved-ref: "283aa5a674d7231eea05de9abab7a47fece1e776"
+      resolved-ref: "92d072a810c7181416663e3a6d1c984735e3c895"
       url: "https://github.com/mocki-toki/pansy_architecture.git"
     source: git
     version: "1.0.0"
@@ -273,7 +273,7 @@ packages:
     description:
       path: "packages/pansy_arch_flutter"
       ref: HEAD
-      resolved-ref: "283aa5a674d7231eea05de9abab7a47fece1e776"
+      resolved-ref: "92d072a810c7181416663e3a6d1c984735e3c895"
       url: "https://github.com/mocki-toki/pansy_architecture.git"
     source: git
     version: "1.0.0"
@@ -282,7 +282,7 @@ packages:
     description:
       path: "packages/pansy_arch_go_router"
       ref: HEAD
-      resolved-ref: "283aa5a674d7231eea05de9abab7a47fece1e776"
+      resolved-ref: "92d072a810c7181416663e3a6d1c984735e3c895"
       url: "https://github.com/mocki-toki/pansy_architecture.git"
     source: git
     version: "1.0.0"
@@ -306,10 +306,10 @@ packages:
     dependency: transitive
     description:
       name: path_provider_android
-      sha256: "3e58242edc02624f2c712e3f8bea88e0e341c4ae1abd3a6ff661318a3aefd829"
+      sha256: "2cec049d282c7f13c594b4a73976b0b4f2d7a1838a6dd5aaf7bd9719196bee86"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.26"
+    version: "2.0.27"
   path_provider_foundation:
     dependency: transitive
     description:
@@ -415,18 +415,18 @@ packages:
     dependency: transitive
     description:
       name: sqflite
-      sha256: e7dfb6482d5d02b661d0b2399efa72b98909e5aa7b8336e1fb37e226264ade00
+      sha256: "8453780d1f703ead201a39673deb93decf85d543f359f750e2afc4908b55533f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.7"
+    version: "2.2.8"
   sqflite_common:
     dependency: transitive
     description:
       name: sqflite_common
-      sha256: "220831bf0bd5333ff2445eee35ec131553b804e6b5d47a4a37ca6f5eb66e282c"
+      sha256: e77abf6ff961d69dfef41daccbb66b51e9983cdd5cb35bf30733598057401555
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.4"
+    version: "2.4.5"
   string_scanner:
     dependency: transitive
     description:

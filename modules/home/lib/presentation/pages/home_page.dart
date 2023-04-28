@@ -9,9 +9,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isAuthorized = true;
-
-    if (!isAuthorized) return WelcomePageBody();
+    final isAuthorized = context.getRequired<AccountRepository>().isAuthenticated;
+    if (!isAuthorized) return WelcomePage();
 
     return TabsNavigator(body: body);
   }

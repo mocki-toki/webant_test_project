@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: account,core,home,photo
+# melos_managed_dependency_overrides: account,core,home,photo,profile
 dependency_overrides:
   account:
     path: ../modules/account
@@ -8,3 +8,5 @@ dependency_overrides:
     path: ../modules/home
   photo:
     path: ../modules/photo
+  profile:
+    path: ../modules/profile

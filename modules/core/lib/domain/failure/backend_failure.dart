@@ -4,4 +4,7 @@ class BackendFailure extends Failure {
   const BackendFailure({required this.message});
 
   final String message;
+
+  @override
+  String toString() => message;
 }

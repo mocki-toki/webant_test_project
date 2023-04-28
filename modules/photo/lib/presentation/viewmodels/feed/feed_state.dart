@@ -8,7 +8,7 @@ class FeedState with _$FeedState {
   const factory FeedState.initial() = _Initial;
   const factory FeedState.loading() = _Loading;
   const factory FeedState.loaded({
-    required List<Photo> photos,
+    required Iterable<Photo> photos,
     required int page,
     required bool isLastPage,
   }) = _Loaded;

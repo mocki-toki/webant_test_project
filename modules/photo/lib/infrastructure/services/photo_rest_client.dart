@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:core/core.dart';
+import 'package:photo/infrastructure/models/media_dto.dart';
 import 'package:photo/infrastructure/models/photo_dto.dart';
+import 'package:photo/infrastructure/models/photo_input_dto.dart';
 import 'package:photo/infrastructure/models/photos_response_dto.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
-import 'package:photo/domain/models/photo.dart';
 
 part 'photo_rest_client.g.dart';
 
@@ -24,5 +27,11 @@ abstract class PhotoRestClient {
   Future<PhotoDto> getPhoto(@Path('id') int id);
 
   @POST('/api/photos')
-  Future<PhotoDto> createPhoto(@Body() Photo photo);
+  Future<PhotoDto> createPhoto(@Body() PhotoInputDto photo);
+
+  @MultiPart()
+  @POST('/api/media_objects')
+  Future<MediaDto> uploadPhoto(
+    @Part(name: 'file') File file,
+  );
 }

@@ -10,7 +10,7 @@ Future<void> main() async {
   services.addPansyArchFlutterModule();
   services.addPansyArchGoRouterModule();
 
-  services.addHomeModule();
+  await services.addHomeModule();
 
   final rootScope = services.buildRootScope();
   await rootScope.initialize();

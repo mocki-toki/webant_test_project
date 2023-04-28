@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:photo/photo.dart';
+import 'package:profile/profile.dart';
 
 class TabsNavigator extends StatelessWidget {
   const TabsNavigator({super.key, required this.body});
@@ -11,6 +12,7 @@ class TabsNavigator extends StatelessWidget {
     var currentIndex = [
       FeedPageRoute.path,
       AddPhotoPageRoute.path,
+      CurrentProfilePageRoute.path,
     ].indexOf(context.router.location);
 
     if (currentIndex == -1) currentIndex = 0;
@@ -33,10 +35,10 @@ class TabsNavigator extends StatelessWidget {
                 icon: Icon(Icons.camera_alt_outlined),
                 label: 'Add photo',
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.account_circle_outlined),
-              //   label: 'Profile',
-              // ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_outlined),
+                label: 'Profile',
+              ),
             ],
           ),
         ],
@@ -47,15 +49,14 @@ class TabsNavigator extends StatelessWidget {
   void onTap(BuildContext context, int value) {
     switch (value) {
       case 0:
-        // TODO заменить на replace
-        context.open(FeedPageRoute());
+        context.router.go(FeedPageRoute.path);
         break;
       case 1:
-        context.open(AddPhotoPageRoute());
+        AddPhotoDialog.open(context);
         break;
-      // case 2:
-      //   context.router.navigate(ProfilePageRoute());
-      //   break;
+      case 2:
+        context.router.go(CurrentProfilePageRoute.path);
+        break;
     }
   }
 }

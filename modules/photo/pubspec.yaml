@@ -10,6 +10,8 @@ dependencies:
     sdk: flutter
 
   core: ^1.0.0
+  image_picker: ^0.8.7+4
+  image: ^4.0.16
 
 dev_dependencies:
   flutter_test:

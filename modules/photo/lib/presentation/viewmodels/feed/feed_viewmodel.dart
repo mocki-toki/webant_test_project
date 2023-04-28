@@ -10,12 +10,14 @@ class FeedViewModel extends Cubit<FeedState> {
     this._scaffoldMessenger, {
     required this.filter,
     required this.limit,
+    this.byUserId,
   }) : super(FeedState.initial()) {
     loadMore();
   }
 
   final PhotoFilter filter;
   final int limit;
+  final int? byUserId;
   final PhotoRepository _photoRepository;
   final ScaffoldMessengerState _scaffoldMessenger;
 
@@ -46,6 +48,7 @@ class FeedViewModel extends Cubit<FeedState> {
       filter: filter,
       page: oldPage + 1,
       limit: limit,
+      byUserId: byUserId,
     );
 
     return result.fold(
@@ -64,7 +67,7 @@ class FeedViewModel extends Cubit<FeedState> {
         FeedState.loaded(
           photos: [...oldPhotos, ...photos],
           page: oldPage + 1,
-          isLastPage: photos.isEmpty,
+          isLastPage: photos.isEmpty || photos.length < limit,
         ),
       ),
     );

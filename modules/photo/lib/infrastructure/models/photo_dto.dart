@@ -29,7 +29,7 @@ extension PhotoDtoToDomain on PhotoDto {
       description: description,
       isNew: isNew,
       isPopular: popular,
-      dateCreate: DateTime.parse(dateCreate).toLocal(),
+      dateCreate: DateTime.parse(dateCreate),
       imageUrl: image.toDomain(),
       user: user,
     );

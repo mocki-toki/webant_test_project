@@ -1,4 +1,6 @@
+import 'package:account/account.dart';
 import 'package:core/core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage(this.route);
@@ -7,43 +9,69 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Create account'),
+    return BlocProvider(
+      create: (_) => RegisterViewModel(
+        context.getRequired<AccountRepository>(),
+        context.getRequired<ScaffoldMessengerState>(),
+        context.getRequired<GoRouter>(),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: Paddings.symmetric16x30,
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Username*'),
-              ),
-              Indent.box10(),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Birthday'),
-              ),
-              Indent.box10(),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'E-mail*'),
-              ),
-              Indent.box10(),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Password*'),
-              ),
-              Indent.box10(),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Confirm password*'),
-              ),
-              Indent.box40(),
-              ElevatedButton(
-                child: Text('Create account'),
-                onPressed: () {},
-              ),
-            ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Create account'),
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: Paddings.symmetric16x30,
+            child: _Body(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<RegisterViewModel, RegisterState>(
+      builder: (context, state) {
+        final viewmodel = context.read<RegisterViewModel>();
+        return Column(
+          children: [
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Username*'),
+              onChanged: viewmodel.usernameChanged,
+            ),
+            Indent.box10(),
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Phone*'),
+              onChanged: viewmodel.phoneChanged,
+            ),
+            Indent.box10(),
+            TextFormField(
+              decoration: InputDecoration(hintText: 'E-mail*'),
+              onChanged: viewmodel.emailChanged,
+            ),
+            Indent.box10(),
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Password*'),
+              onChanged: viewmodel.passwordChanged,
+            ),
+            Indent.box10(),
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Confirm password*'),
+              onChanged: viewmodel.confirmPasswordChanged,
+            ),
+            Indent.box40(),
+            ElevatedButton(
+              child: Text('Create account'),
+              onPressed: viewmodel.register,
+            ),
+          ],
+        );
+      },
     );
   }
 }
