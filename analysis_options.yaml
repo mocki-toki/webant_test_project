@@ -67,7 +67,6 @@ dart_code_metrics:
           - build-method
     - no-boolean-literal-compare
     - no-equal-then-else
-    - no-magic-number
     - no-object-declaration
     - prefer-async-await
     - prefer-conditional-expressions
