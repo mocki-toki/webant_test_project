@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
-import 'package:account/account.dart';
-import 'package:gallery/gallery.dart';
+import 'package:home/home.dart';
 import 'package:webant_test_client/application_widget.dart';
 
 Future<void> main() async {
@@ -11,8 +10,7 @@ Future<void> main() async {
   services.addPansyArchFlutterModule();
   services.addPansyArchGoRouterModule();
 
-  services.addAccountModule();
-  services.addGalleryModule();
+  services.addHomeModule();
 
   final rootScope = services.buildRootScope();
   await rootScope.initialize();

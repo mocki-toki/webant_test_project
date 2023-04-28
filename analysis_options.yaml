@@ -11,6 +11,10 @@ analyzer:
   exclude:
     - "**/**.g.dart"
     - "**/**.freezed.dart"
+
+  errors:
+    invalid_annotation_target: ignore
+
   plugins:
     - dart_code_metrics
 
@@ -81,7 +85,7 @@ dart_code_metrics:
     - tag-name:
         var-names: [_kTag]
         strip-prefix: _
-        strip-postfix: State
+        strip-photofix: State
     - always-remove-listener
     - avoid-border-all
     - avoid-unnecessary-setstate
@@ -96,4 +100,3 @@ dart_code_metrics:
 
   anti-patterns:
     - long-method
-    - long-parameter-list

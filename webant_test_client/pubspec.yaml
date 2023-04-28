@@ -9,8 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  account: ^1.0.0
-  gallery: ^1.0.0
+  home: ^1.0.0
 
 flutter:
   uses-material-design: true

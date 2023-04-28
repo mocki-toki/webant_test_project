@@ -1,8 +1,10 @@
-# melos_managed_dependency_overrides: account,core,gallery
+# melos_managed_dependency_overrides: account,core,home,photo
 dependency_overrides:
   account:
     path: ../modules/account
   core:
     path: ../modules/core
-  gallery:
-    path: ../modules/gallery
+  home:
+    path: ../modules/home
+  photo:
+    path: ../modules/photo

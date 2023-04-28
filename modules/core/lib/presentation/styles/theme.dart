@@ -10,7 +10,10 @@ abstract class Theme {
       outlinedButtonTheme: _getOutlinedButtonThemeData(),
       textButtonTheme: _getTextButtonThemeData(),
       inputDecorationTheme: _getInputDecorationTheme(),
+      bottomNavigationBarTheme: _getBottomNavigationBarThemeData(),
       textTheme: _getTextTheme(),
+      dividerTheme: _getDividerThemeData(),
+      tabBarTheme: _getTabBarTheme(),
     );
   }
 
@@ -112,6 +115,26 @@ abstract class Theme {
     );
   }
 
+  static BottomNavigationBarThemeData _getBottomNavigationBarThemeData() {
+    return BottomNavigationBarThemeData(
+      backgroundColor: Colors.background,
+      selectedItemColor: Colors.accent,
+      unselectedItemColor: Colors.subtitle,
+      selectedLabelStyle: TextStyles.min,
+      unselectedLabelStyle: TextStyles.min,
+      elevation: 0,
+    );
+  }
+
+  static DividerThemeData _getDividerThemeData() {
+    return DividerThemeData(
+      color: Colors.grayLight,
+      thickness: 1,
+      indent: 0,
+      endIndent: 0,
+    );
+  }
+
   static TextTheme _getTextTheme() {
     return TextTheme(
       labelLarge: TextStyles.main,
@@ -119,6 +142,23 @@ abstract class Theme {
       bodyMedium: TextStyles.min,
       bodyLarge: TextStyles.min,
       bodySmall: TextStyles.min,
+    );
+  }
+
+  static TabBarTheme _getTabBarTheme() {
+    return TabBarTheme(
+      labelColor: Colors.primary,
+      unselectedLabelColor: Colors.subtitle,
+      labelStyle: TextStyles.title,
+      unselectedLabelStyle: TextStyles.title,
+      indicator: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.accent,
+            width: Sizes.divider.height,
+          ),
+        ),
+      ),
     );
   }
 }

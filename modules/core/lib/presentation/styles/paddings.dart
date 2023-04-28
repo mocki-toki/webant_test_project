@@ -6,4 +6,5 @@ abstract class Paddings {
   static const symmetric16x30 = EdgeInsets.symmetric(horizontal: 16, vertical: 30);
   static const logoPadding = EdgeInsets.all(32);
   static const inputDecorationContent = EdgeInsets.fromLTRB(15, 14, 15, 9);
+  static const previewImage = EdgeInsets.all(10);
 }
